@@ -1,0 +1,282 @@
+@charset "UTF-8";
+ul > :not(li),
+ol > :not(li) {
+  content: "<ul>タグ、<ol>タグの直下に入れられるのは<li>タグだけです";
+  outline: 2px solid red;
+  animation: blink-red 1s infinite;
+}
+@keyframes blink-red {
+  0% {
+    outline-color: red;
+  }
+  49.9% {
+    outline-color: red;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+dl > :not(dt):not(dd):not(div) {
+  content: "<dl>タグ、タグの直下に入れられるのは<dt>,<dd>,および<div>タグだけです";
+  outline: 2px solid red;
+  animation: blink-red 1s infinite;
+}
+@keyframes blink-red {
+  0% {
+    outline-color: red;
+  }
+  49.9% {
+    outline-color: red;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+a[name] {
+  content: "name属性はHTML5で廃止されました";
+  outline: 2px solid red;
+  animation: blink-red 1s infinite;
+}
+@keyframes blink-red {
+  0% {
+    outline-color: red;
+  }
+  49.9% {
+    outline-color: red;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+a[href="javascript:void(0)"] {
+  content: "<a>タグは移動するためだけに使用するべきです";
+  outline: 2px solid gold;
+  animation: blink-gold 1s infinite;
+}
+@keyframes blink-gold {
+  0% {
+    outline-color: gold;
+  }
+  49.9% {
+    outline-color: gold;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+a[target=_blank]:not([rel="noreferrer noopener"]) {
+  content: 'target="_blank"の場合は悪用を防ぐためにもrel="noreferrer noopener"の使用を推奨します';
+  outline: 2px solid gold;
+  animation: blink-gold 1s infinite;
+}
+@keyframes blink-gold {
+  0% {
+    outline-color: gold;
+  }
+  49.9% {
+    outline-color: gold;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+img:not([alt]),
+img[alt=""] {
+  content: "画像がコンテンツの中で重要でない限り、alt属性を入力することを強く推奨します";
+  outline: 2px solid gold;
+  animation: blink-gold 1s infinite;
+}
+@keyframes blink-gold {
+  0% {
+    outline-color: gold;
+  }
+  49.9% {
+    outline-color: gold;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+img:not([width]),
+img[width=""],
+img:not([height]),
+img[height=""] {
+  content: "画像のサイズを入力しておくと、読み込む前に場所を確保し、読み込み後のレイアウトが変わるのを抑制できます";
+  outline: 2px solid gold;
+  animation: blink-gold 1s infinite;
+}
+@keyframes blink-gold {
+  0% {
+    outline-color: gold;
+  }
+  49.9% {
+    outline-color: gold;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+:root iframe:nth-of-type(4) {
+  content: "連続して4つ以上のiframeが設置されています。iframeが複数あるとパフォーマンスに影響を与えます";
+  outline: 2px solid gold;
+  animation: blink-gold 1s infinite;
+}
+@keyframes blink-gold {
+  0% {
+    outline-color: gold;
+  }
+  49.9% {
+    outline-color: gold;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+time:not([datetime]),
+time[datetime=""] {
+  content: "datetime属性がない場合、タグ内に妥当な値が入力されていますか？";
+  outline: 2px solid gold;
+  animation: blink-gold 1s infinite;
+}
+@keyframes blink-gold {
+  0% {
+    outline-color: gold;
+  }
+  49.9% {
+    outline-color: gold;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+time:not([datetime]) *,
+time[datetime=""] * {
+  content: "datetime属性がない場合、タグ内に子孫要素をもってはいけません";
+  outline: 2px solid red;
+  animation: blink-red 1s infinite;
+}
+@keyframes blink-red {
+  0% {
+    outline-color: red;
+  }
+  49.9% {
+    outline-color: red;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+font,
+center,
+frame,
+blink,
+marquee,
+*[align],
+*[color],
+*[bgcolor],
+*[border],
+*[background] {
+  content: "古いタグや属性が使用されています。古いタグの使用はやめ、装飾はCSSで行うようにしましょう";
+  outline: 2px solid red;
+  animation: blink-red 1s infinite;
+}
+@keyframes blink-red {
+  0% {
+    outline-color: red;
+  }
+  49.9% {
+    outline-color: red;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+hgroup > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  content: "hgroupタグ内で許可されているのはh1～h6タグです";
+  outline: 2px solid red;
+  animation: blink-red 1s infinite;
+}
+@keyframes blink-red {
+  0% {
+    outline-color: red;
+  }
+  49.9% {
+    outline-color: red;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+table > * ~ caption {
+  content: "capptionタグはtableタグの最初の子要素として配置しなくてはなりません";
+  outline: 2px solid red;
+  animation: blink-red 1s infinite;
+}
+@keyframes blink-red {
+  0% {
+    outline-color: red;
+  }
+  49.9% {
+    outline-color: red;
+  }
+  50% {
+    outline-color: transparent;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+br + br {
+  display: none;
+}
+
+/*# sourceMappingURL=debug.css.map */

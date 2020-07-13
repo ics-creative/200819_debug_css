@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Debug Css一覧</title>
+    <link href="https://fonts.googleapis.com/css2?family=Monda:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./debug.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="globalWrapper">
+      <header>
+        <div class="headerInner">
+          <h1 class="headerTitle">Debug CSS</h1>
+        </div>
+      </header>
+      <aside>
+
+        <nav class="navigation">
+          <h2 class="navigationTitle">目次</h2>
+          <ul>
+            <li><a href="#u-tag">ul・ol・dlタグ</a></li>
+            <li><a href="#a-tag">aタグ</a></li>
+            <li><a href="#img-tag">imgタグ</a></li>
+            <li><a href="#time-tag">timeタグ</a></li>
+            <li><a href="#hgroup-tag">hgroupタグ</a></li>
+            <li><a href="#table-tag">tableタグ</a></li>
+            <li><a href="#old-tag">古いタグ・属性</a></li>
+            <li><a href="#br-tag">brタグ</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="contents">
+        <section>
+          <h2 id="ul-tag" class="tagName">ul・ol・dlタグ</h2>
+          <div class="exampleList ulDebug">
+            <div class="exampleItem">
+              <h3 class="exampleTitle">
+                ul・ol・dlタグの子要素に不適切なタグ
+              </h3>
+              <div class="example">
+                <ul>
+                  <div>divタグ</div>
+                  <p>pタグ</p>
+                </ul>
+                <ol>
+                  <div>divタグ</div>
+                  <p>pタグ</p>
+                </ol>
+                <dl>
+                  <p>pタグ</p>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2 id="a-tag" class="tagName">aタグ</h2>
+          <div class="exampleList aDebug">
+            <div class="exampleItem">
+              <h3 class="exampleTitle">
+                name属性のあるaタグ
+              </h3>
+              <div class="example">
+                <a href="#" name="aaa">リンク</a>
+              </div>
+            </div>
+
+            <div class="exampleItem">
+              <h3 class="exampleTitle">
+                javascript:void(0)の利用
+              </h3>
+              <div class="example">
+                <a href="javascript:void(0)">なにかインタラクション要素</a>
+              </div>
+            </div>
+
+            <div class="exampleItem">
+              <h3 class="exampleTitle">
+                target="_blank"だけどrel="noreferrer noopener"がない
+              </h3>
+              <div class="example">
+                <a href="#" target="_blank">外部リンク</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="img-tag" class="tagName">imgタグ</h2>
+          <div class="exampleItem imgDebug">
+            <h3 class="exampleTitle">
+              alt属性のないimgタグ
+            </h3>
+            <div class="example">
+              <img
+                src="https://picsum.photos/200/300"
+                alt=""
+                width="200"
+                height="300"
+              />
+            </div>
+          </div>
+
+          <div class="exampleItem">
+            <h3 class="exampleTitle">
+              width、あるいはheight属性のないimgタグ
+            </h3>
+            <div class="example">
+              <img
+                src="https://picsum.photos/200/300"
+                alt="ランダムな画像"
+                width="200"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="time-tag" class="tagName">timeタグ</h2>
+          <div class="exampleList timeDebug">
+            <div class="exampleItem">
+              <h3 class="exampleTitle">
+                datetime属性のないtimeタグ（タグ内が妥当な値であればOK）
+              </h3>
+              <div class="example">
+                <time>2020年1月1日（このような表記は妥当な値にならない）</time>
+              </div>
+            </div>
+            <div class="exampleItem">
+              <h3 class="exampleTitle">
+                datetime属性のないtimeタグの中に配置した子孫要素
+              </h3>
+              <div class="example">
+                <time>timeタグの中に<span>子要素</span></time>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="hgroup-tag" class="tagName">hgroupタグ</h2>
+          <div class="exampleList hgroupDebug">
+            <div class="exampleItem">
+              <h3 class="exampleTitle">
+                hgroupタグ内にhタグでない要素
+              </h3>
+              <div class="example">
+                <hgroup>
+                  <p>hgroupタグ内にpタグ</p>
+                </hgroup>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="table-tag" class="tagName">tableタグ</h2>
+          <div class="exampleList tableDebug">
+            <div class="exampleItem">
+              <h3 class="exampleTitle">
+                tableの最初の子要素でないcaptionタグ
+              </h3>
+              <div class="example">
+                <table>
+                  <tr>
+                    <td>a</td>
+                    <td>b</td>
+                    <td>c</td>
+                  </tr>
+                  <tr>
+                    <td>e</td>
+                    <td>f</td>
+                    <td>g</td>
+                  </tr>
+                  <caption>
+                    tableの最初の子要素でないキャプション
+                  </caption>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="old-tag" class="tagName">古いタグ・属性</h2>
+          <div class="exampleList oldDebug">
+            <div class="exampleItem">
+              <h3 class="exampleTitle">
+                古いタグ
+              </h3>
+              <div class="example">
+                <font size="4">
+                  フォントタグなどの古いタグ
+                </font>
+              </div>
+            </div>
+            <div class="exampleItem">
+              <h3 class="exampleTitle">
+                古い属性
+              </h3>
+              <div class="example">
+                <p color="red">
+                  color属性などの古い属性
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="br-tag" class="tagName">brタグ</h2>
+          <div class="exampleList brDebug">
+            <div class="exampleItem">
+              <h3 class="exampleTitle">
+                無用なbrタグの連続
+              </h3>
+              <div class="example">改行の<br /><br />連続</div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Debug CSS</p>
+      </footer>
+    </div>
+  </body>
+</html>
