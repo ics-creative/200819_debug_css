@@ -136,4 +136,9 @@ section {
   border: 1px solid #ccc;
 }
 
+.brDebug .caution {
+  margin-top: 16px;
+  font-size: 0.75rem;
+}
+
 /*# sourceMappingURL=style.css.map */
