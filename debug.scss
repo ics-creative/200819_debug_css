@@ -1,8 +1,6 @@
 @mixin blinkAnimation($color) {
   outline: 2px solid $color;
   animation: blink-#{$color} 1s infinite;
-
-  @include blinkColor($color);
 }
 
 @mixin blinkColor($color) {
@@ -24,6 +22,9 @@
     }
   }
 }
+
+@include blinkColor(red);
+@include blinkColor(gold);
 
 ul > :not(li),
 ol > :not(li) {
