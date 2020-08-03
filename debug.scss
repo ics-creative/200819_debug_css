@@ -60,7 +60,7 @@ a[target="_blank"]:not([rel="noreferrer noopener"]) {
 img:not([alt]),
 img[alt=""] {
   content: "画像がコンテンツの中で重要でない限り、alt属性を入力することを強く推奨します";
-
+  display: block;
   @include blinkAnimation(gold);
 }
 
@@ -69,7 +69,7 @@ img[width=""],
 img:not([height]),
 img[height=""] {
   content: "画像のサイズを入力しておくと、読み込む前に場所を確保し、読み込み後のレイアウトが変わるのを抑制できます";
-
+  display: block;
   @include blinkAnimation(gold);
 }
 
