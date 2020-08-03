@@ -60,20 +60,28 @@ a[target=_blank]:not([rel="noreferrer noopener"]) {
 
 img:not([alt]),
 img[alt=""] {
-  content: "画像がコンテンツの中で重要でない限り、alt属性を入力することを強く推奨します";
   display: block;
   outline: 2px solid gold;
   animation: blink-gold 1s infinite;
+}
+img:not([alt])::after,
+img[alt=""]::after {
+  content: "画像がコンテンツの中で重要でない限り、alt属性を入力することを強く推奨します";
 }
 
 img:not([width]),
 img[width=""],
 img:not([height]),
 img[height=""] {
-  content: "画像のサイズを入力しておくと、読み込む前に場所を確保し、読み込み後のレイアウトが変わるのを抑制できます";
   display: block;
   outline: 2px solid gold;
   animation: blink-gold 1s infinite;
+}
+img:not([width])::after,
+img[width=""]::after,
+img:not([height])::after,
+img[height=""]::after {
+  content: "画像のサイズを入力しておくと、読み込む前に場所を確保し、読み込み後のレイアウトが変わるのを抑制できます";
 }
 
 :root iframe:nth-of-type(4) {
