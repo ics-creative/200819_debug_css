@@ -12,6 +12,11 @@
   display: grid;
   grid-template: "header header" 80px "navigation contents" 1fr "footer footer" 60px/320px 1fr;
 }
+@media screen and (max-width: 768px) {
+  .globalWrapper {
+    grid-template: "header" 80px "navigation" auto "contents" 1fr "footer" 60px/1fr;
+  }
+}
 
 header {
   grid-area: header;
@@ -70,10 +75,25 @@ footer p {
   top: 104px;
   background-color: #fff;
 }
+@media screen and (max-width: 768px) {
+  .navigation {
+    position: static;
+  }
+  .navigation ul {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+}
 .navigation li {
   margin-bottom: 16px;
   list-style: none;
   font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .navigation li {
+    margin: 0 24px 16px 0;
+  }
 }
 .navigation li a {
   font-size: 1.1rem;
