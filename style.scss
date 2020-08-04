@@ -18,12 +18,13 @@ $link: #024b7b;
     "header header" 80px
     "navigation contents" 1fr
     "footer footer" 60px / 320px 1fr;
-    @media screen and (max-width: 768px) {
-      grid-template:
-              "header" 80px
-              "navigation" auto
-              "contents" 1fr
-              "footer" 60px / 1fr;
+
+  @media screen and (max-width: 768px) {
+    grid-template:
+      "header" 80px
+      "navigation" auto
+      "contents" 1fr
+      "footer" 60px / 1fr;
   }
 }
 
@@ -84,21 +85,26 @@ footer {
   z-index: 1;
   top: 104px;
   background-color: #fff;
+
   @media screen and (max-width: 768px) {
     position: static;
-    ul{
+
+    ul {
       display: flex;
       justify-content: start;
       flex-wrap: wrap;
     }
   }
+
   li {
     margin-bottom: 16px;
     list-style: none;
     font-weight: bold;
+
     @media screen and (max-width: 768px) {
       margin: 0 24px 16px 0;
     }
+
     a {
       font-size: 1.1rem;
       display: block;
@@ -157,6 +163,7 @@ section {
     width: 300px;
     border-collapse: collapse;
   }
+
   td,
   th {
     height: 32px;
@@ -170,4 +177,3 @@ section {
   margin-top: 16px;
   font-size: 0.75rem;
 }
-
