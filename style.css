@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 120px;
+}
+@media screen and (max-width: 768px) {
+  html {
+    scroll-padding-top: 100px;
+  }
+}
+
 /** layout **/
 .globalWrapper {
   position: relative;
@@ -14,7 +23,7 @@
 }
 @media screen and (max-width: 768px) {
   .globalWrapper {
-    grid-template: "header" 80px "navigation" auto "contents" 1fr "footer" 60px/1fr;
+    grid-template: "header" 80px "navigation" auto "contents" 1fr "footer" 60px/100%;
   }
 }
 
@@ -147,6 +156,12 @@ section {
 .tableDebug table {
   width: 300px;
   border-collapse: collapse;
+}
+@media screen and (max-width: 768px) {
+  .tableDebug table {
+    width: 100%;
+    max-width: 320px;
+  }
 }
 .tableDebug td,
 .tableDebug th {
