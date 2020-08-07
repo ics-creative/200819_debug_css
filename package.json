@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "scripts": {
-    "sass": "sass ./:./ --watch",
+    "sass": "sass --no-source-map ./src:./docs --watch",
     "stylelint": "stylelint \"**/*.scss\" --fix"
   },
   "devDependencies": {

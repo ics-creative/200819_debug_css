@@ -8,8 +8,9 @@ $border: #ccc;
 $text: #333;
 $link: #024b7b;
 
-html{
+html {
   scroll-padding-top: 120px;
+
   @media screen and (max-width: 768px) {
     scroll-padding-top: 100px;
   }
@@ -34,7 +35,6 @@ html{
       "footer" 60px / 100%;
   }
 }
-
 
 header {
   grid-area: header;
@@ -170,6 +170,7 @@ section {
   table {
     width: 300px;
     border-collapse: collapse;
+
     @media screen and (max-width: 768px) {
       width: 100%;
       max-width: 320px;
